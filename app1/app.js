@@ -1,13 +1,38 @@
 // MODULE
-var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
+var myApp = angular.module('myApp', []);
+
+myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+
+    $scope.handle= ''
+
+    $scope.lowercasehandle = function() {
+        return $filter('lowercase')($scope.handle)
+    }
+    
+    // $scope.name = 'Clark'
+
+    // $timeout(function() {
+
+    // $scope.name = 'Everyone'
+
+    // }, 3000)
+
+}])
+
+// Below is the minified verson of the above^^
+
+// myApp.controller("mainController", ["$scope, $log", function (o, n) {
+//     n.info(o)
+// }]);
+
 
 // CONTROLLERS
 // All AngularJS services start with a '$'
 // The '$scope' function below has been injected into the function below:
 
-myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
+// myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
 
-    console.log($resource)
+//     console.log($resource)
 
     // $scope.name = 'John'
     // $scope.formattedname =  $filter('uppercase') ($scope.name)
@@ -38,9 +63,15 @@ myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
 
     // console.log($scope)
     
-});
+// });
 
+// var things = [1, '2', function() {
+//     alert('Hello!')
+// }]
 
+// things[2]()
+
+// console.log(things)
 
 
 // Dependency injection = pass the object to the function instead of creating it inside the function:
