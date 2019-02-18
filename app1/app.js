@@ -8,6 +8,18 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
     $scope.lowercasehandle = function() {
         return $filter('lowercase')($scope.handle)
     }
+
+    $scope.$watch('handle', function(newValue, oldValue) {
+        console.log('Changed!')
+        console.log('Old:' + oldValue)
+        console.log('New:' + newValue)
+    })
+
+    setTimeout(function() {
+
+        $scope.handle = 'newtwitterhandle'
+        console.log('Scope changed!')
+    }, 3000)
     
     // $scope.name = 'Clark'
 
@@ -18,6 +30,12 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
     // }, 3000)
 
 }])
+
+myApp.directive("serachResult", function() {
+    return {
+
+    }
+})
 
 // Below is the minified verson of the above^^
 
