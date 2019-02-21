@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="myApp">
+<html lang="en-us" ng-app="clarkApp">
     <head>
         <title>Introduction to AngularJS</title>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -49,9 +49,31 @@
                     <input type="text" ng-model="handle" />
                 </div>
 
+                <div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters }" ng-show="handle.length !== characters">
+                    <div ng-show="handle.length < characters">
+                        You have less than 5 characters
+                    </div>
+                    <div ng-show="handle.length > characters">
+                        You have more than 5 characters
+                    </div>
+                </div>
+
                 <hr />
 
                 <h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+                <h3>Rules</h3>
+                <ul>
+                    <li ng-repeat="rule in rules">
+                        {{ rule.rulename }}
+                    </li>
+                </ul>
+
+                <input type="button" value="Click Me" ng-click="alertClick()" />
+
+                <br />
+
+                <div>{{ name }}</div>
 
         <!-- <form name="myForm">
             <label>

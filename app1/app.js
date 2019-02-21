@@ -1,33 +1,44 @@
 // MODULE
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('clarkApp', []);
 
 myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
 
+    $scope.name = 'John Doe'
+    
     $scope.handle= ''
 
     $scope.lowercasehandle = function() {
         return $filter('lowercase')($scope.handle)
     }
 
-    $scope.$watch('handle', function(newValue, oldValue) {
-        console.log('Changed!')
-        console.log('Old:' + oldValue)
-        console.log('New:' + newValue)
-    })
+    $scope.characters = 5
 
-    setTimeout(function() {
+    // $scope.$watch('handle', function(newValue, oldValue) {
+    //     console.log('Changed!')
+    //     console.log('Old:' + oldValue)
+    //     console.log('New:' + newValue)
+    // })
 
-        $scope.handle = 'newtwitterhandle'
-        console.log('Scope changed!')
-    }, 3000)
-    
-    // $scope.name = 'Clark'
+    // setTimeout(function() {
 
-    // $timeout(function() {
-
-    // $scope.name = 'Everyone'
+    //     $scope.apply(function() {
+    //         $scope.handle = 'newtwitterhandle'
+    //     })
 
     // }, 3000)
+
+    $scope.rules = [
+        { rulename: 'Must be 5 characters'},
+        { rulename: 'Must not be used elsewhere'},
+        { rulename: 'Must be cool'}
+    ]
+    console.log($scope.rules)
+
+    $scope.alertClick = function() {
+
+        alert('Clicked!')
+
+    }
 
 }])
 
