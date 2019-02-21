@@ -1,9 +1,12 @@
 // MODULE
 var myApp = angular.module('clarkApp', []);
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+myApp.controller('mainController', ['$scope', '$filter', '$location', '$log', function($scope, $filter, $location, $log) {
 
-    $scope.name = 'John Doe'
+    $log.info($location.path())
+    
+    
+    $scope.name = 'Main'
     
     $scope.handle= ''
 
@@ -39,6 +42,12 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         alert('Clicked!')
 
     }
+
+}])
+
+myApp.controller('secondController', ['$scope', function($scope) {
+
+    $scope.name = 'Second'
 
 }])
 

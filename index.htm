@@ -18,6 +18,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.7.0-rc.0/angular-messages.min.js"></script>
         <script src='https://code.angularjs.org/1.7.0-rc.0/angular-resource.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js'></script>
+
         <script src="app.js"></script>
     </head>
     <body>
@@ -74,6 +76,10 @@
                 <br />
 
                 <div>{{ name }}</div>
+
+                <div ng-controller='secondController'>
+                    {{ name }}
+                </div>
 
         <!-- <form name="myForm">
             <label>

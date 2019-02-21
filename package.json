@@ -1,0 +1,22 @@
+{
+  "name": "udemy-angularjs",
+  "version": "1.0.0",
+  "description": "udemy angularJS tutorial app",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WCNewell/udemy-angularJS.git"
+  },
+  "keywords": [
+    "angularJS"
+  ],
+  "author": "Clark Newell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WCNewell/udemy-angularJS/issues"
+  },
+  "homepage": "https://github.com/WCNewell/udemy-angularJS#readme"
+}
