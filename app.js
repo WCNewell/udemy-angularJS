@@ -57,6 +57,8 @@ myApp.directive("serachResult", function() {
     }
 })
 
+// Adding a comment to test git on PC
+
 // Below is the minified verson of the above^^
 
 // myApp.controller("mainController", ["$scope, $log", function (o, n) {
