@@ -1,20 +1,33 @@
 // MODULE
-var myApp = angular.module('clarkApp', []);
+var myApp = angular.module('clarkApp', ['ngRoute']);
 
-myApp.controller('mainController', ['$scope', '$filter', '$location', '$log', function($scope, $filter, $location, $log) {
+myApp.config(function ($routeProvider) {
 
-    $log.info($location.path())
+    $routeProvider
+
+    .when('/', {
+        templateUrl: 'pages/main.html',
+        controller: 'mainController'
+    })
+
+    .when('/second/:num', {
+        templateUrl: 'pages/second.html',
+        controller: 'secondController'
+    })
+})
+
+myApp.controller('mainController', ['$scope', '$log', '$routeParmas', function($scope, $log, $routeParmas) {
     
     
     $scope.name = 'Main'
     
-    $scope.handle= ''
+    // $scope.handle= ''
 
-    $scope.lowercasehandle = function() {
-        return $filter('lowercase')($scope.handle)
-    }
+    // $scope.lowercasehandle = function() {
+    //     return $filter('lowercase')($scope.handle)
+    // }
 
-    $scope.characters = 5
+    // $scope.characters = 5
 
     // $scope.$watch('handle', function(newValue, oldValue) {
     //     console.log('Changed!')
@@ -30,32 +43,32 @@ myApp.controller('mainController', ['$scope', '$filter', '$location', '$log', fu
 
     // }, 3000)
 
-    $scope.rules = [
-        { rulename: 'Must be 5 characters'},
-        { rulename: 'Must not be used elsewhere'},
-        { rulename: 'Must be cool'}
-    ]
-    console.log($scope.rules)
+    // $scope.rules = [
+    //     { rulename: 'Must be 5 characters'},
+    //     { rulename: 'Must not be used elsewhere'},
+    //     { rulename: 'Must be cool'}
+    // ]
+    // console.log($scope.rules)
 
-    $scope.alertClick = function() {
+    // $scope.alertClick = function() {
 
-        alert('Clicked!')
+    //     alert('Clicked!')
 
-    }
+    // }
 
 }])
 
-myApp.controller('secondController', ['$scope', function($scope) {
+myApp.controller('secondController', ['$scope', '$log', function($scope, $log) {
 
     $scope.name = 'Second'
 
 }])
 
-myApp.directive("serachResult", function() {
-    return {
+// myApp.directive("serachResult", function() {
+//     return {
 
-    }
-})
+//     }
+// })
 
 // Adding a comment to test git on PC
 

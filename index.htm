@@ -18,8 +18,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.7.0-rc.0/angular-messages.min.js"></script>
         <script src='https://code.angularjs.org/1.7.0-rc.0/angular-resource.min.js'></script>
-        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js'></script>
-
+        <script src='https://code.angularjs.org/1.7.0-rc.0/angular-route.min.js'></script>
+        
         <script src="app.js"></script>
     </head>
     <body>
@@ -32,7 +32,8 @@
 				</div>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#/second"><i></i>Second</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -40,7 +41,9 @@
 
         <div class="container">
 
-			<div ng-controller="mainController">
+            <div ng-view></div>
+
+			<!-- <div ng-controller="mainController">
                 
                 <h1>Hello {{ name + ', how are you?' }}!</h1>
 
@@ -81,7 +84,7 @@
                     {{ name }}
                 </div>
 
-        <!-- <form name="myForm">
+        <form name="myForm">
             <label>
                 Enter text:
                 <input type="email" ng-model="field" name="myField" required maxlength="15" />
@@ -91,9 +94,9 @@
                 <div class='alert alert-warning' ng-message="email">This field must be a valid email address.</div>
                 <div ng-message="maxlength">This field can be at most 15 characters long.</div>
                 </div>
-            </form> -->
+            </form>
                 
-            </div>
+            </div> -->
 
 		</div>
 
