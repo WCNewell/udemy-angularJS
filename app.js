@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('clarkApp', ['ngRoute']);
 
 myApp.config(function ($routeProvider) {
 
@@ -25,10 +25,15 @@ myApp.controller('mainController', ['$scope', '$log', function ($scope, $log) {
 
     $scope.name = 'Main';
 
+    $log.main = 'Property from main'
+    $log.log($log)
+
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function ($scope, $log, $routeParams) {
 
     $scope.num = $routeParams.num || 1;
+    $log.log($log)
+
 
 }]);
